@@ -1,0 +1,73 @@
+Collecting datamaestro
+  Using cached datamaestro-0.6.23-py3-none-any.whl (112 kB)
+Collecting experimaestro>=0.7.5
+  Using cached experimaestro-0.7.7-py2.py3-none-any.whl (1.9 MB)
+Requirement already satisfied: numpy in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from datamaestro) (1.17.0)
+Collecting mkdocs-material
+  Using cached mkdocs_material-6.1.0-py2.py3-none-any.whl (3.9 MB)
+Collecting cached-property
+  Using cached cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Requirement already satisfied: urllib3 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from datamaestro) (1.25.9)
+Requirement already satisfied: requests in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from datamaestro) (2.24.0)
+Collecting pymdown-extensions
+  Using cached pymdown_extensions-8.0.1-py2.py3-none-any.whl (206 kB)
+Processing c:\users\wuwen\appdata\local\pip\cache\wheels\ac\ed\39\ecb2e36c2893bb7b1324f6def66a7b3369c0bfc36ed2e07bb3\docstring_parser-0.7.3-py3-none-any.whl
+Processing c:\users\wuwen\appdata\local\pip\cache\wheels\28\55\50\dfe8e54b2b618d328da9f3f2599bf84a2d522e8d8c6fc3d25e\bitmath-1.3.3.1-py3-none-any.whl
+Requirement already satisfied: click in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from datamaestro) (7.1.2)
+Requirement already satisfied: tqdm in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from datamaestro) (4.47.0)
+Collecting mkdocs
+  Using cached mkdocs-1.1.2-py3-none-any.whl (6.4 MB)
+Collecting marshmallow
+  Using cached marshmallow-3.8.0-py2.py3-none-any.whl (46 kB)
+Collecting jsonstreams
+  Using cached jsonstreams-0.4.3-py2.py3-none-any.whl (9.9 kB)
+Processing c:\users\wuwen\appdata\local\pip\cache\wheels\ba\18\68\0ceee2b8bb73d186a43e53f5aaac7f6e510193f381bc3f7d5a\pytools-2020.4.3-py2.py3-none-any.whl
+Collecting rpyc
+  Using cached rpyc-4.1.5-py3-none-any.whl (68 kB)
+Collecting fasteners
+  Using cached fasteners-0.15-py2.py3-none-any.whl (23 kB)
+Requirement already satisfied: watchdog in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from experimaestro>=0.7.5->datamaestro) (0.10.3)
+Requirement already satisfied: psutil in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from experimaestro>=0.7.5->datamaestro) (5.7.0)
+Collecting websockets
+  Using cached websockets-8.1-cp37-cp37m-win_amd64.whl (66 kB)
+Collecting fabric
+  Using cached fabric-2.5.0-py2.py3-none-any.whl (51 kB)
+Requirement already satisfied: markdown>=3.2 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from mkdocs-material->datamaestro) (3.3.3)
+Requirement already satisfied: Pygments>=2.4 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from mkdocs-material->datamaestro) (2.6.1)
+Collecting mkdocs-material-extensions>=1.0
+  Using cached mkdocs_material_extensions-1.0.1-py3-none-any.whl (8.0 kB)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from requests->datamaestro) (2020.6.20)
+Requirement already satisfied: chardet<4,>=3.0.2 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from requests->datamaestro) (3.0.4)
+Requirement already satisfied: idna<3,>=2.5 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from requests->datamaestro) (2.10)
+Requirement already satisfied: tornado>=5.0 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from mkdocs->datamaestro) (6.0.4)
+Requirement already satisfied: Jinja2>=2.10.1 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from mkdocs->datamaestro) (2.11.2)
+Requirement already satisfied: PyYAML>=3.10 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from mkdocs->datamaestro) (5.3.1)
+Collecting lunr[languages]==0.5.8
+  Using cached lunr-0.5.8-py2.py3-none-any.whl (2.3 MB)
+Processing c:\users\wuwen\appdata\local\pip\cache\wheels\d4\f2\03\55f37093eb8cb0c89d7efb206f792dba55cd5bd67b1c5b1ce1\livereload-2.6.3-py2.py3-none-any.whl
+Requirement already satisfied: six in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from jsonstreams->experimaestro>=0.7.5->datamaestro) (1.15.0)
+Requirement already satisfied: decorator>=3.2.0 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from pytools->experimaestro>=0.7.5->datamaestro) (4.4.2)
+Collecting appdirs>=1.4.0
+  Using cached appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+Collecting plumbum
+  Using cached plumbum-1.6.9-py2.py3-none-any.whl (115 kB)
+Collecting monotonic>=0.1
+  Using cached monotonic-1.5-py2.py3-none-any.whl (5.3 kB)
+Requirement already satisfied: pathtools>=0.1.1 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from watchdog->experimaestro>=0.7.5->datamaestro) (0.1.2)
+Requirement already satisfied: paramiko>=2.4 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from fabric->experimaestro>=0.7.5->datamaestro) (2.7.1)
+Collecting invoke<2.0,>=1.3
+  Using cached invoke-1.4.1-py3-none-any.whl (210 kB)
+Requirement already satisfied: importlib-metadata; python_version < "3.8" in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from markdown>=3.2->mkdocs-material->datamaestro) (1.7.0)
+Requirement already satisfied: MarkupSafe>=0.23 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from Jinja2>=2.10.1->mkdocs->datamaestro) (1.1.1)
+Requirement already satisfied: future>=0.16.0 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from lunr[languages]==0.5.8->mkdocs->datamaestro) (0.18.2)
+Requirement already satisfied: nltk>=3.2.5; python_version > "2.7" and extra == "languages" in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from lunr[languages]==0.5.8->mkdocs->datamaestro) (3.5)
+Requirement already satisfied: cryptography>=2.5 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from paramiko>=2.4->fabric->experimaestro>=0.7.5->datamaestro) (2.9.2)
+Requirement already satisfied: bcrypt>=3.1.3 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from paramiko>=2.4->fabric->experimaestro>=0.7.5->datamaestro) (3.1.7)
+Requirement already satisfied: pynacl>=1.0.1 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from paramiko>=2.4->fabric->experimaestro>=0.7.5->datamaestro) (1.4.0)
+Requirement already satisfied: zipp>=0.5 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from importlib-metadata; python_version < "3.8"->markdown>=3.2->mkdocs-material->datamaestro) (3.1.0)
+Requirement already satisfied: regex in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from nltk>=3.2.5; python_version > "2.7" and extra == "languages"->lunr[languages]==0.5.8->mkdocs->datamaestro) (2020.6.8)
+Requirement already satisfied: joblib in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from nltk>=3.2.5; python_version > "2.7" and extra == "languages"->lunr[languages]==0.5.8->mkdocs->datamaestro) (0.16.0)
+Requirement already satisfied: cffi!=1.11.3,>=1.8 in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from cryptography>=2.5->paramiko>=2.4->fabric->experimaestro>=0.7.5->datamaestro) (1.14.0)
+Requirement already satisfied: pycparser in c:\users\wuwen\anaconda3\envs\amal\lib\site-packages (from cffi!=1.11.3,>=1.8->cryptography>=2.5->paramiko>=2.4->fabric->experimaestro>=0.7.5->datamaestro) (2.20)
+Installing collected packages: jsonstreams, appdirs, pytools, plumbum, rpyc, monotonic, fasteners, websockets, marshmallow, invoke, fabric, experimaestro, lunr, livereload, mkdocs, mkdocs-material-extensions, pymdown-extensions, mkdocs-material, cached-property, docstring-parser, bitmath, datamaestro
+Successfully installed appdirs-1.4.4 bitmath-1.3.3.1 cached-property-1.5.2 datamaestro-0.6.23 docstring-parser-0.7.3 experimaestro-0.7.7 fabric-2.5.0 fasteners-0.15 invoke-1.4.1 jsonstreams-0.4.3 livereload-2.6.3 lunr-0.5.8 marshmallow-3.8.0 mkdocs-1.1.2 mkdocs-material-6.1.0 mkdocs-material-extensions-1.0.1 monotonic-1.5 plumbum-1.6.9 pymdown-extensions-8.0.1 pytools-2020.4.3 rpyc-4.1.5 websockets-8.1
