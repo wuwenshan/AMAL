@@ -27,57 +27,49 @@ def read_temps(path):
 class RNN(nn.Module):
     #  TODO:  Implémenter comme décrit dans la question 1
     
-    def __init__(self, batch_size, dim_size, h_size, output_size, task="classif"):
+    def __init__(self, dim_size, h_size, output_size, F):
         super(RNN, self).__init__()
         self.Wx = torch.nn.Linear(dim_size, h_size)
         self.Wh = torch.nn.Linear(h_size, h_size)
+        self.Wo = torch.nn.Linear(h_size, output_size) 
         
         self.tanh = torch.nn.Tanh()
         self.relu = torch.nn.ReLU()
         self.sm = torch.nn.Softmax(dim=1)
         self.sig = torch.nn.Sigmoid()
-        
-        self.decodeL = torch.nn.Linear(h_size, output_size)
-        
-        self.task = task
+
+        self.F = F
+
         
     def forward(self, x, h0):
         all_h = [h0]
-        all_h_decoded = []
+        all_y = []
         for i in range(len(x)):
             hi = self.one_step(x[i], all_h[-1])
             all_h.append(hi)
-            all_h_decoded.append(self.decode(hi, self.task))
+            all_y.append(self.decode(hi))
             
-        if self.task == "forecasting":
-            return all_h[-1], self.decode(all_h[-1], self.task), torch.stack(all_h_decoded)
-        else:
-            return all_h[-1], self.decode(all_h[-1]), self.task, torch.stack(all_h_decoded)
+        return torch.stack(all_h), torch.stack(all_y), self.Wo(all_h[-1])
+            
 
     
     def one_step(self, seq, h):
         return self.tanh( self.Wh(h) + self.Wx(seq) )
         
         
-    def decode(self, h, task):
-        if task == "classif":
-            return self.sm(self.decodeL(h))
+    def decode(self, h):
+        y = self.Wo(h)
+        return self.F(y)
         
-        elif task == "forecasting":
-            return self.sig(self.decodeL(h))
-        
-        else:
-            return None
-
-
+    
 #  TODO:  Implémenter les classes Dataset ici
 # param nbSeq : nombre de séquences par ville
 # param nbVilles : les nb premières villes choisies
-def getData(path, task="classif", nbVilles=10, seqLen=200, nbSeq=1000):
+def getData(path, task="classif", nbVilles=10, seqLen=200, nbSeq=100):
     
     temp = read_temps(path)[:, :nbVilles]
-    temp = ( temp - temp.min() ).float() / ( temp.max() - temp.min() ).float() 
-    temp = 2*temp - 1
+    #temp = ( temp - temp.min() ).float() / ( temp.max() - temp.min() ).float() 
+    #temp = 2*temp - 1
     
     X = []
     y = []
