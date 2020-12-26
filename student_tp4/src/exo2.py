@@ -34,11 +34,11 @@ model = model.double()
 model = model.to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
-optim = torch.optim.SGD(model.parameters(), lr = 0.1)
+optim = torch.optim.Adam(model.parameters(), lr = 0.01)
 
 h0 = torch.randn((BATCH_SIZE, 20),dtype=torch.double)
 h0 = h0.to(device)
-
+#all_h = [h0]
 loss_train = []
 loss_test= []
 acc_train = []
@@ -46,10 +46,10 @@ acc_test = []
 
 writer = SummaryWriter()
 
+sm = torch.nn.Softmax(dim=1)
 
 
-
-for i in tqdm(range(100)):
+for i in tqdm(range(80)):
     loss_val2 = 0
     loss_val = 0
     acc_val = 0
@@ -69,8 +69,8 @@ for i in tqdm(range(100)):
             x = x.double()
             all_h, all_y, last_h = model(x.permute(1,0,2), h0)
 
-            last_y = all_y[-1]
-            
+            #last_y = all_y[-1]
+            last_y = sm(last_h)
             
             cl_pred = torch.max(last_y, dim=1)[1]
             
@@ -107,3 +107,23 @@ for i in tqdm(range(100)):
     writer.add_scalars('Temp/RNN/Loss/', {'train' : loss_val / c, 'test' : loss_val2/c2}, i)
     writer.add_scalars('Temp/RNN/Acc/', {'train' : acc_val / c, 'test' : acc_val2/c2}, i)
     
+"""
+PATH = "state_dict_model.pt"
+torch.save(model.state_dict(), PATH)
+
+fig, ax = plt.subplots(figsize=(10,5))
+ax.grid()
+ax.set(xlabel = "Nombre d'epochs", ylabel="Loss", title=f"Evolution de la loss sur {len(loss_train)} epochs")
+plt.plot(np.arange(len(loss_train)), loss_train, label="train")
+plt.plot(np.arange(len(loss_test)), loss_test, label="test")
+ax.legend()
+plt.savefig(f"loss_villes_")  
+
+fig, ax = plt.subplots(figsize=(10,5))
+ax.grid()
+ax.set(xlabel = "Nombre d'epochs", ylabel="Accuracy (%)", title=f"Evolution de l'accuracy sur {len(acc_train)} epochs")
+plt.plot(np.arange(len(acc_train)), acc_train, label="train")
+plt.plot(np.arange(len(acc_test)), acc_test, label="test")
+ax.legend()
+plt.savefig(f"acc_villes_")  
+"""

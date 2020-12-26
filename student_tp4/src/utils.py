@@ -49,17 +49,18 @@ class RNN(nn.Module):
             all_h.append(hi)
             all_y.append(self.decode(hi))
             
-        return torch.stack(all_h), torch.stack(all_y), self.Wo(all_h[-1])
+        return torch.stack(all_h[1:]), torch.stack(all_y)#, self.Wo(all_h[-1])
             
 
     
     def one_step(self, seq, h):
-        return self.tanh( self.Wh(h) + self.Wx(seq) )
+        return self.relu( self.Wh(h) + self.Wx(seq) )
         
         
     def decode(self, h):
         y = self.Wo(h)
-        return self.F(y)
+        return y
+        #return self.tanh(y)
         
     
 #  TODO:  Implémenter les classes Dataset ici
@@ -130,7 +131,7 @@ class MonDataset(Dataset):
         self.y = y.long()
         
     def __getitem__(self, index):
-        return self.X[:, index, :], self.y[index]
+        return self.X[index], self.y[index]
     
     def __len__(self):
         return len(self.y)
